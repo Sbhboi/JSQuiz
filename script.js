@@ -85,12 +85,13 @@ function resetState(){
     }
 }
 
-function selectAnswer(e){
+function selectAnswer(e) {
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
-    if(isCorrect){
+    if (isCorrect) {
         selectedBtn.classList.add("Correct");
-    }else{
+        score++;
+    } else {
         selectedBtn.classList.add("incorrect");
     }
     Array.from(answerButtons.children).forEach(button => {
@@ -126,3 +127,4 @@ nextButton.addEventListener("click", ()=>{
     }
 });
 
+startQuiz();
